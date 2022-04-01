@@ -11,4 +11,4 @@ elif op == "/":
 elif op == "*":
     print(num1 * num3)
 else:
-    print("Invalid Operators")
+    print("Invalid LOperators")
