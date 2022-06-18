@@ -5,3 +5,12 @@ for index in numbers:
         print(index + 100)
     else:
         print(index - 100)
+        
+    
+
+
+numbers2 = [1,2,3,4,5,6,7,8,9,10]
+
+for c in numbers2:
+    
+    print(numbers2)
