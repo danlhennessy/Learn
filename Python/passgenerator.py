@@ -3,7 +3,8 @@ import string
 
 def password_gen():
     length = random.randint(10, 15)
-    for letter in password:
-        letter = random.choices(string.ascii_uppercase + string.digits)
+    password = ''
+    for letter in range(length):
+        password = password + random.choice(string.ascii_uppercase)
     print(password)
 password_gen()
