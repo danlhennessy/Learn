@@ -1,5 +1,6 @@
 numbers = [1,2,3,4,5,6,7,8,9]
 
+#Assign index as a variable to each item in list, then take action as below, one by one.
 for index in numbers:
     if index >= 5:
         print(index + 100)
