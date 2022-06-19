@@ -1,0 +1,1 @@
+#Install modules from https://docs.python.org/3/py-modindex.html or third party modules, or from local py files(e.g. import random or import usefulscripts.py)
