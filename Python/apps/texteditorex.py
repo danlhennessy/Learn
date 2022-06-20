@@ -1,3 +1,5 @@
+# Example Text Editor for learning purposes
+
 # Importing Required libraries & Modules
 from tkinter import *
 from tkinter import messagebox
