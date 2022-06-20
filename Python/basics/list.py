@@ -31,3 +31,10 @@ print(list3[-1])
 #Confirm item exists in list
 if "Apple" in list3:
         print("yes")
+        
+#List append + List insert
+list3.append("Lemon")
+
+list3.insert(2, "Orange")
+
+print(list3)
