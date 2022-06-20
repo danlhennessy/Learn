@@ -38,3 +38,19 @@ list3.append("Lemon")
 list3.insert(2, "Orange")
 
 print(list3)
+
+#List pop + List remove
+list3.pop()
+
+list3.remove("Orange")
+
+print(list3)
+
+list4 = [1,4,3,7,8,5,]
+
+#List sort and reverse
+list4.sort()
+list4.reverse()
+sortedlist4 = sorted(list4)
+
+print(list4)
