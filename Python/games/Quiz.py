@@ -18,11 +18,18 @@ questions = [
     
 ]
 
-def test():
+questions22 = [
+    Question("Test Question 1", "a"),
+    Question("Test Question 2", "c"),
+    Question("Test Question 3", "b")    
+        
+]
+
+def test(questions):
     score = 0
     for question in questions:
         answer = input(question.prompt)
         if answer == question.answer:
             score +=1
     print(f"Thanks for completeing this Quiz, your score is {score}!")
-test()
+test(questions22)
