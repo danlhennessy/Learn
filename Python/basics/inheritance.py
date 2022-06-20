@@ -10,6 +10,9 @@ class Chef:
 
 #ChineseChef class imports all functions from inside Chef class        
 class ChineseChef(Chef):
+    #If you define a new function that exists in inherited class, the new function overrites the original
+    def make_special(self):
+        print("Chef makes noodles")
     def make_fried_rice(self):
         print("Chef makes fried rice")
     
@@ -17,4 +20,4 @@ mychef = Chef()
 mychef.make_chicken()
 
 mychinesechef = ChineseChef()
-mychinesechef.make_fried_rice()
+mychinesechef.make_special()
