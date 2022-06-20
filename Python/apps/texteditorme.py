@@ -28,5 +28,14 @@ root.config(menu=my_menu)
 #Menu - File
 file_menu = Menu(my_menu)
 my_menu.add_cascade(label="File", menu=file_menu)
+file_menu.add_command(label="New")
+file_menu.add_command(label="Open")
+file_menu.add_command(label="Save")
+file_menu.add_command(label="Save As")
+file_menu.add_command(label="Quit")
+
+#Menu - Edit
+edit_menu = Menu(my_menu)
+my_menu.add_cascade(label="Edit", menu=edit_menu)
 
 root.mainloop()
