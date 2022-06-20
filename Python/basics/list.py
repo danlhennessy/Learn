@@ -27,3 +27,7 @@ list3 = [5, True, "Apple"]
 
 #Print last item in list
 print(list3[-1])
+
+#Confirm item exists in list
+if "Apple" in list3:
+        print("yes")
