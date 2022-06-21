@@ -55,8 +55,7 @@ file_menu = Menu(my_menu, tearoff=False)
 my_menu.add_cascade(label="File", menu=file_menu)
 file_menu.add_command(label="New", command=file_new)
 file_menu.add_command(label="Open", command=file_open)
-file_menu.add_command(label="Save")
-file_menu.add_command(label="Save As", command=file_save)
+file_menu.add_command(label="Save", command=file_save)
 file_menu.add_command(label="Quit", command=root.destroy)
 
 #Menu - Edit
