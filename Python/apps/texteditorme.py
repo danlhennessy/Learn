@@ -1,6 +1,7 @@
 from tkinter import *
 from tkinter import messagebox
 from tkinter import filedialog
+from tkinter import ttk
 
 root = Tk()
 root.title("PY Text Editor")
@@ -25,7 +26,22 @@ text_scroll.config(command=my_text.yview)
 my_menu = Menu(root)
 root.config(menu=my_menu)
 
-#Save Function
+#New File Function
+def file_new():
+    my_text.delete('1.0', END)
+    root.title('New File - PY Text Editor')
+
+#Open File Function
+def file_open():
+    my_text.delete('1.0', END)
+    #Shows Open file dialogue and sets chosen file = 'f'
+    f = filedialog.askopenfilename()
+    #Opens selected file in read format
+    f = open(f, 'r')
+    #Inserts file into 'my_text' widget
+    my_text.insert(END, f.read())
+
+#Save File Function
 def file_save():
     f = filedialog.asksaveasfile(mode='w', defaultextension=".txt")
     if f is None: # asksaveasfile return `None` if dialog closed with "cancel".
@@ -37,8 +53,8 @@ def file_save():
 #Menu - File
 file_menu = Menu(my_menu, tearoff=False)
 my_menu.add_cascade(label="File", menu=file_menu)
-file_menu.add_command(label="New")
-file_menu.add_command(label="Open")
+file_menu.add_command(label="New", command=file_new)
+file_menu.add_command(label="Open", command=file_open)
 file_menu.add_command(label="Save")
 file_menu.add_command(label="Save As", command=file_save)
 file_menu.add_command(label="Quit", command=root.destroy)
