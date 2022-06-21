@@ -1,7 +1,6 @@
 from tkinter import *
 from tkinter import messagebox
 from tkinter import filedialog
-from tkinter import ttk
 
 root = Tk()
 root.title("PY Text Editor")
@@ -16,7 +15,7 @@ text_scroll = Scrollbar(my_frame)
 text_scroll.pack(side=RIGHT, fill=Y)
 
 #Text Box
-my_text = Text(my_frame, width=120, height=120, fg="blue", undo=True, yscrollcommand=text_scroll.set)
+my_text = Text(my_frame, width=120, height=120, fg="blue", bg='white', undo=True, yscrollcommand=text_scroll.set)
 my_text.pack()
 
 #Scroll Bar Config

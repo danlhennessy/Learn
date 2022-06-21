@@ -1,4 +1,4 @@
-#Defines what a 'student' is (Something in your program that has a 'name, major, gpa, and is_on_probation' value
+#Defines what a 'student' is (Something in your program that has 'name, major, gpa, and is_on_probation' parameters)
 class student:
     
     def __init__(self, name, major, gpa, is_on_probation):
