@@ -25,14 +25,23 @@ text_scroll.config(command=my_text.yview)
 my_menu = Menu(root)
 root.config(menu=my_menu)
 
+#Save Function
+def file_save():
+    f = filedialog.asksaveasfile(mode='w', defaultextension=".txt")
+    if f is None: # asksaveasfile return `None` if dialog closed with "cancel".
+        return
+    text2save = str(my_text.get(1.0, END)) # starts from `1.0`, not `0.0`
+    f.write(text2save)
+    f.close()
+
 #Menu - File
 file_menu = Menu(my_menu, tearoff=False)
 my_menu.add_cascade(label="File", menu=file_menu)
 file_menu.add_command(label="New")
 file_menu.add_command(label="Open")
 file_menu.add_command(label="Save")
-file_menu.add_command(label="Save As")
-file_menu.add_command(label="Quit", command=root.quit)
+file_menu.add_command(label="Save As", command=file_save)
+file_menu.add_command(label="Quit", command=root.destroy)
 
 #Menu - Edit
 edit_menu = Menu(my_menu, tearoff=False)
