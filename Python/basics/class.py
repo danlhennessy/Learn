@@ -22,3 +22,13 @@ print(student1.name)
 print(student2.gpa)
 
 print(student2.on_honor_roll())
+
+class dog:
+    def __init__(self, breed, age, name):
+        self.breed = breed
+        self.age = age
+        self.name = name
+    
+dog1 = dog("German Shepherd", 12, "Joe")
+
+print(dog1.name)
