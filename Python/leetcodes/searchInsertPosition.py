@@ -11,3 +11,5 @@ def searchInsert(nums):
             return(i+1)
             
 print(searchInsert(nums))
+
+print(searchInsert(nums) + 2)
