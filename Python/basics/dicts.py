@@ -19,3 +19,7 @@ for key, value in mydict.items():
     print(key, value)
     
 print(mydict.values())
+
+mydict2 = {"name": "Dan", 1: 3}
+print(mydict2)
+print(mydict2[1])
