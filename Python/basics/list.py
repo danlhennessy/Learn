@@ -54,3 +54,10 @@ list4.reverse()
 sortedlist4 = sorted(list4)
 
 print(list4)
+
+#One Line list comprehension
+
+def convert(list):
+    return ([str(v) for v in list])
+
+print(convert([1,2,3,4]))
