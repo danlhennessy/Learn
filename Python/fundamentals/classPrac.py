@@ -1,4 +1,4 @@
-#Main Concepts of Object-Oriented Programming (OOPs): Class, Object, Polymorphism, ncapsulatio, Inheritance, Data Abstraction
+#Main Concepts of Object-Oriented Programming (OOPs): Class, Object, Polymorphism, Encapsulation, Inheritance, Data Abstraction
 
 class Vehicle:
     def __init__(self, name, max_speed, mileage):
