@@ -4,8 +4,6 @@
 
 #Return true if there is a cycle in the linked list. Otherwise, return false.
 
-from tkinter import X
-
 
 class ListNode:
      def __init__(self, x):
