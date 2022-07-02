@@ -61,3 +61,8 @@ def convert(list):
     return ([str(v) for v in list])
 
 print(convert([1,2,3,4]))
+
+#List comprehension to remove all instances of an element, in this case the highest number:
+mylist1 = [1,2,3,4,5,6,6,6,6]
+mylist2 = [v for v in mylist1 if v != max(mylist1)]
+print(mylist2)
