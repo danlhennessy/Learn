@@ -12,9 +12,14 @@ class Vehicle:
         
     def seating_capacity(self, capacity):
         return f"The seating capacity of a {self.name} is {capacity} passengers"
+    
+    def mileagesq(self):
+        print(self.mileage ** 2)
         
 class Bus(Vehicle):
     pass
 
 bus2 = Bus("Tren", 160, 24)
 print(bus2.seating_capacity(50))
+
+bus2.mileagesq()
