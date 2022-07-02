@@ -5,8 +5,8 @@
 #Return the head of the merged linked list.
 
 def mergeTwoLists(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
-        dummy = ListNode()
-        tail = dummy
+        dummy = ListNode() # Dummy always points to the initial/head node
+        tail = dummy # Tail progresses through the linked list for the purposes of the problem so cant be the variable returned
         
         while l1 and l2:
             if l1.val < l2.val:
