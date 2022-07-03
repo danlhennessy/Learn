@@ -5,20 +5,23 @@
 #Return the head of the merged linked list.
 
 def mergeTwoLists(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
-        dummy = ListNode() # Dummy always points to the initial/head node
-        tail = dummy # Tail progresses through the linked list for the purposes of the problem so cant be the variable returned
+        dummy = ListNode() # dummy points to the initial/head node
+        cur = dummy # cur progresses through the linked list for the purposes of the problem so cant be the variable returned
         
         while l1 and l2:
-            if l1.val < l2.val:
-                tail.next = l1
-                l1 = l1.next
-            else:
-                tail.next = l2
+            if l1.val > l2.val:
+                cur.next = l2
                 l2 = l2.next
-            tail = tail.next
-            
-        if l1:
-            tail.next = l1
-        elif l2:
-            tail.next = l2
+            else:
+                cur.next = l1
+                l1 = l1.next
+            cur = cur.next
+        while l1:
+            cur.next = l1
+            l1 = l1.next
+            cur = cur.next
+        while l2:
+            cur.next = l2
+            l2 = l2.next
+            cur = cur.next
         return dummy.next
