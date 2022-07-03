@@ -1,8 +1,4 @@
 #print(dir(int))
 
-val = 0
-
-if val:
-    print("Truee")
-else:
-    print("Falsee")
+for i in range(0, 21):
+    print(22 - 1- i, i)
