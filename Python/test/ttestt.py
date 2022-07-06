@@ -1,11 +1,6 @@
 #print(dir(int))
 
-string = "Hello i am here"
+string = "tmmzuxt"
 
-string1 = ""
-for v in string:
-    if v == " ":
-        string1 += "-"
-    else:
-        string1 += v
-print(string1)
+
+print(string[2:])
