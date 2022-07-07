@@ -38,3 +38,15 @@ print(sum(firstn(12)))
 print(next(l))
 print(next(l))
 print(sum(l)) # Sum of rest of yield after first 2 nexts
+
+print("Fibonacci")
+
+def fibonacci(limit):
+    a, b = 0, 1
+    while a < limit:
+        yield a
+        a, b = b, a + b
+        
+aa = fibonacci(18)
+for v in aa:
+    print(v)
