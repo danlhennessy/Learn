@@ -37,4 +37,4 @@ l = firstn(12)
 print(sum(firstn(12)))       
 print(next(l))
 print(next(l))
-print(sum(l))
+print(sum(l)) # Sum of rest of yield after first 2 nexts
