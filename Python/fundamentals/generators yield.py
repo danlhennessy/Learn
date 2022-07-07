@@ -50,3 +50,9 @@ def fibonacci(limit):
 aa = fibonacci(18)
 for v in aa:
     print(v)
+    
+print("Creating a generator without function and turning into list")
+
+mygen = (i for i in range(10) if i % 2 == 0)
+print(mygen)
+print(list(mygen))
