@@ -14,5 +14,5 @@ def mygen2(alist):
         yield alist[i]
         i += 1
         
-temp2 = mygen2([1,3,5,8,7,9,11,13,34])
+temp2 = mygen2([1,3,5,7,9,11,13,34])
 print(list(temp2))
