@@ -5,7 +5,6 @@ def mygen(num):
         n += 1
         
 temp = mygen(20)
-print(temp)
 print(list(temp))
 
 def mygen2(alist):
