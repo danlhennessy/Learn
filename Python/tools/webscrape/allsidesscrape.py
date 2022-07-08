@@ -17,7 +17,7 @@ rows = soup.select('tbody tr')
 
 row = rows[0]
 name = row.select_one('.views-field-title')
-namestripped = row.select_one('.views-field-title').text.strip()
+nametext = row.select_one('.views-field-title').text.strip()
 print(name)
-print(namestripped)
+print(nametext)
 
