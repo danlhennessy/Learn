@@ -21,3 +21,6 @@ nametext = row.select_one('.views-field-title').text.strip()
 print(name)
 print(nametext)
 
+allsides_page = row.select_one('.views-field-title a')['href'] #Selecting attribute href from the element a
+allsides_page = 'https://www.allsides.com' + allsides_page
+print(allsides_page)
