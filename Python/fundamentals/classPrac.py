@@ -17,9 +17,11 @@ class Vehicle:
         print(self.mileage ** 2)
         
 class Bus(Vehicle):
-    pass
+    def __init__(self, name, max_speed, mileage):
+        super().__init__(name, max_speed, mileage)
 
-bus2 = Bus("Tren", 160, 24)
-print(bus2.seating_capacity(50))
+bus2 = Bus("Tren", 160, 32)
 
-bus2.mileagesq()
+print(bus2.name)
+
+bus2.display()
