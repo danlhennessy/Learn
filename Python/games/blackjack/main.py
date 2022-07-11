@@ -32,15 +32,14 @@ class deck:
     
     def buildDeck(self):
         for key, value in cardtypes.items():
-            self.cards.append(f"{key} of Hearts")
-            self.cards.append(f"{key} of Diamonds")
-            self.cards.append(f"{key} of Clubs")
-            self.cards.append(f"{key} of Spades")
-        print(self.cards)
+            self.cards.append(card(suits[0], key, value))
+            self.cards.append(card(suits[1], key, value))
+            self.cards.append(card(suits[2], key, value))
+            self.cards.append(card(suits[3], key, value))
     
     def shuffle(self):
         random.shuffle(self.cards)
-        print(self.cards)
+        return(self.cards)
     
     def drawcard(self):
         drawntype = random.choice(list(cardtypes.keys()))
@@ -51,8 +50,9 @@ class deck:
 mydeck = deck()
 mydeck.drawcard().showcard()
 
-mydeck.buildDeck()
-mydeck.shuffle()
+mydeck.buildDeck() # Builds list of card objects
+for v in mydeck.shuffle():
+    v.showcard()
 
 
 
