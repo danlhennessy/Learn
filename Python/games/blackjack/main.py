@@ -42,18 +42,19 @@ class deck:
         return(self.cards)
     
     def drawcard(self):
-        drawntype = random.choice(list(cardtypes.keys()))
-        drawncard = card(random.choice(suits), drawntype, cardtypes[drawntype])
-        return drawncard
+        return self.cards.pop()
+    
+    def showdeck(self):
+        for v in self.cards:
+            v.showcard()
 
 
 mydeck = deck()
-mydeck.drawcard().showcard()
 
-mydeck.buildDeck() # Builds list of card objects
-for v in mydeck.shuffle():
-    v.showcard()
-
+mydeck.buildDeck()  # Builds list of card objects
+mydeck.showdeck()
+mydeck.drawcard()
+mydeck.showdeck()
 
 
 
