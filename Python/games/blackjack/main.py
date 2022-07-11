@@ -1,4 +1,6 @@
 import random
+from deck import deck
+from card import card
 
 
 cardtypes = {1: 1, 2: 2, 3: 3, 4: 4, 5: 5, 6: 6, 7: 7, 8: 8, 9: 9, 10: 10, "Jack": 10, "Queen": 10, "King": 10, "Ace": [1, 11]}
@@ -10,53 +12,37 @@ class blackjack:
     pass
 
 
-class player:
-    pass  # player attributes, player turn, draw, showhand
-
-
-class card:
-    # card attributes, showcard   
-    def __init__(self, suit, type, value):
-        self.suit = suit
-        self.type = type
-        self.value = value
-
-    def showcard(self):
-        print(f"{self.type} of {self.suit}")
-
-
-class deck:
-    # deck attributes, build deck, shuffle, drawcard, show cards in deck
+class player:  # player attributes, player turn, draw, showhand
     def __init__(self):
-        self.cards = []
+        self.curval = 0
     
-    def buildDeck(self):
-        for key, value in cardtypes.items():
-            self.cards.append(card(suits[0], key, value))
-            self.cards.append(card(suits[1], key, value))
-            self.cards.append(card(suits[2], key, value))
-            self.cards.append(card(suits[3], key, value))
+    def turn(self):
+        newdeck = deck()
+        newdeck.buildDeck()
+        newdeck.shuffle()
+        choice = input("Stick or Twist: ")
+        if choice.lower() == "stick":
+            print(f"Your score is {self.curval}")
+        if choice.lower() == "twist":
+            curcard = newdeck.drawcard()
+            self.curval += curcard.value
+            print(self.curval)
+        else:
+            print("You can only Stick or Twist")
+            
     
-    def shuffle(self):
-        random.shuffle(self.cards)
-        return(self.cards)
+    def showval(self):
+        pass
     
-    def drawcard(self):
-        return self.cards.pop()
-    
-    def showdeck(self):
-        for v in self.cards:
-            v.showcard()
+    def draw(self):
+        pass
+            
 
 
-mydeck = deck()
-
-mydeck.buildDeck()  # Builds list of card objects
-mydeck.showdeck()
-mydeck.drawcard()
-mydeck.showdeck()
 
 
+myplayer = player()
+myplayer.turn()
 
 
 # if __name__ == '__main__':

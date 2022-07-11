@@ -3029,3 +3029,5 @@ Python/apps/flask/.venv/Lib/site-packages/python_dotenv-0.20.0.dist-info/REQUEST
 Python/apps/flask/.venv/Lib/site-packages/python_dotenv-0.20.0.dist-info/top_level.txt
 Python/apps/flask/.venv/Lib/site-packages/python_dotenv-0.20.0.dist-info/WHEEL
 Python/apps/flask/.venv/Scripts/dotenv.exe
+Python/games/blackjack/__pycache__/card.cpython-310.pyc
+Python/games/blackjack/__pycache__/deck.cpython-310.pyc
