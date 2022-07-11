@@ -1,6 +1,4 @@
-import random
 from deck import deck
-from card import card
 from player import player
 
 

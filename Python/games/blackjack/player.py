@@ -8,7 +8,3 @@ class player:  # player attributes, player turn, draw, showhand
         
     def showval(self):
         print(self.curval)
-    
-    def draw(self):
-        pass
-            
