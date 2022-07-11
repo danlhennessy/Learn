@@ -4,10 +4,6 @@ from card import card
 from player import player
 
 
-cardtypes = {1: 1, 2: 2, 3: 3, 4: 4, 5: 5, 6: 6, 7: 7, 8: 8, 9: 9, 10: 10, "Jack": 10, "Queen": 10, "King": 10, "Ace": 1}  # Fix Ace value later
-suits = ["Hearts", "Diamonds", "Clubs", "Spades"]
-
-
 class blackjack:
     def __init__(self):
         self.player = player(0)
@@ -19,10 +15,20 @@ class blackjack:
         self.deck.shuffle()
         curcard = self.deck.drawcard()
         curcard.showcard()
-        self.curval += curcard.value
-        while self.curval < 21:
-            self.player.turn()
-            
+        self.player.curval += curcard.value
+        while self.player.curval < 21:
+            choice = self.player.turn()
+            if choice.lower == "stick":
+                print(f"Your score is {self.curval}")
+            if choice.lower() == "twist":
+                curcard = self.deck.drawcard()
+                curcard.showcard()
+                self.player.curval += curcard.value
+                self.player.showval()
+        if self.player.curval == 21:
+            print("BlackJack!!!")
+        if self.player.curval > 21:
+            print("Bust!")
 
 
 

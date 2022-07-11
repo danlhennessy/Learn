@@ -1,7 +1,7 @@
 import random
 from card import card
 
-cardtypes = {1: 1, 2: 2, 3: 3, 4: 4, 5: 5, 6: 6, 7: 7, 8: 8, 9: 9, 10: 10, "Jack": 10, "Queen": 10, "King": 10, "Ace": 1}
+cardtypes = {2: 2, 3: 3, 4: 4, 5: 5, 6: 6, 7: 7, 8: 8, 9: 9, 10: 10, "Jack": 10, "Queen": 10, "King": 10, "Ace": 1}
 suits = ["Hearts", "Diamonds", "Clubs", "Spades"]
 
 
@@ -22,8 +22,7 @@ class deck:
         return(self.cards)
 
     def drawcard(self):
-        newcard = self.cards.pop()
-        return newcard
+        return self.cards.pop()
 
     def showdeck(self):
         for v in self.cards:
