@@ -1,4 +1,4 @@
-class card:     # card attributes, showcard   
+class card:     # card attributes, showcard
 
     def __init__(self, suit, type, value):
         self.suit = suit

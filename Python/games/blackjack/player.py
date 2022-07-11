@@ -1,5 +1,5 @@
 class player:  # player attributes, player turn, draw, showhand
-    
+
     def __init__(self, curval):
         self.curval = curval
 
@@ -17,6 +17,6 @@ class player:  # player attributes, player turn, draw, showhand
             print("BlackJack!!!")
         if self.curval > 21:
             print("Bust!")
-        
+
     def showval(self):
         print(self.curval)
