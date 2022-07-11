@@ -8,21 +8,24 @@ suits = ["Hearts", "Diamonds", "Clubs", "Spades"]
 
 
 class blackjack:
-    # Initialise game, create resources, create loop to run game until 21, deal cards
-    pass
-
-
-class player:  # player attributes, player turn, draw, showhand
     def __init__(self):
         self.curval = 0
-    
-    def turn(self):
-        newdeck = deck()
-        newdeck.buildDeck()
-        newdeck.shuffle()
-        curcard = newdeck.drawcard()
+        self.player = player()
+        self.deck = deck()
+        
+    # Initialise game, create resources, create loop to run game until 21, deal cards
+    def run(self):
+        self.deck.buildDeck()
+        self.deck.shuffle()
+        curcard = self.deck.drawcard()
         curcard.showcard()
         self.curval += curcard.value
+        while self.curval < 21:
+            self.player.turn()
+
+class player:  # player attributes, player turn, draw, showhand
+
+    def turn(self):
         choice = input("Stick or Twist: ")
         if choice.lower() == "stick":
             print(f"Your score is {self.curval}")
