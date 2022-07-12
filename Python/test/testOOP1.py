@@ -1,32 +1,19 @@
-class rectangle:
-    def __init__(self, length, width):
-        self.length = length
-        self.width = width
-    
-    def Perimeter(self):
-        return (self.length * 2) + (self.width * 2)
-    
-    def Area(self):
-        return self.length * self.width
+class Person:
+    def __init__(self, name, age):
+        self.name = str(name)
+        self.age = str(age)
     
     def display(self):
-        print(self.width, self.length, self.Perimeter(), self.Area())
+        print(f"My name is {self.name} I am {self.age} years old")
         
-    
-myrect = rectangle(5, 10)
+class Student(Person):
+    def __init__(self, name, age, section):
+        self.section = section
+        super().__init__(name, age)
+        
+    def displayStudent(self):
+        print(self.name, self.age, self.section)
+        
+mystud = Student("Tony", 17, "Oak")
 
-myrect.display()
-
-
-class Parallelepipede(rectangle):
-    def __init__(self, length, width, height):
-        self.height = height
-        super().__init__(length, width)
-    
-    def Volume(self):
-        return (self.height * self.width * self.length)
-
-    
-mypara = Parallelepipede(10, 12, 10)
-
-print(mypara.Volume())
+mystud.displayStudent()
