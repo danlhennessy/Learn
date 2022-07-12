@@ -1,4 +1,4 @@
-#Inheritance - Bringing functions from a base class to child classes
+# Inheritance - Bringing functions from a base class to child classes
 
 class dog:
     def __init__(self, name, age):
@@ -8,9 +8,10 @@ class dog:
     def ageplusone(self):
         print(self.age + 1)
 
+
 class gshep(dog):
     def __init__(self, name, age):
-        super().__init__(name, age) #Brings functions from base class including __init__
+        super().__init__(name, age)  # Brings functions from base class including __init__
     
 dog1 = gshep("joe", 28)
 

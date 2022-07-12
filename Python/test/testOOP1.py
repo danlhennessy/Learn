@@ -1,19 +1,14 @@
-class Person:
-    def __init__(self, name, age):
-        self.name = str(name)
-        self.age = str(age)
-    
-    def display(self):
-        print(f"My name is {self.name} I am {self.age} years old")
-        
-class Student(Person):
-    def __init__(self, name, age, section):
-        self.section = section
-        super().__init__(name, age)
-        
-    def displayStudent(self):
-        print(self.name, self.age, self.section)
-        
-mystud = Student("Tony", 17, "Oak")
+class myString(str):
+    def __init__(self, string):
+        self.string = string
+        super().__init__()
+    def append(self, a):
+        self.string += a
+        return self.string
 
-mystud.displayStudent()
+    def pop(self, p):
+        return self.string[:-p]
+    
+testring = myString("Hellos")
+
+print(testring.pop(1))
