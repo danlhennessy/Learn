@@ -24,3 +24,5 @@ print(nametext)
 allsides_page = row.select_one('.views-field-title a')['href'] #Selecting attribute href from the element a
 allsides_page = 'https://www.allsides.com' + allsides_page
 print(allsides_page)
+
+mydivs = soup.find_all("div", {"class": "stylelistrow"}) # return all divs with class "stylelistrow"
