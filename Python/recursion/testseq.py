@@ -1,4 +1,5 @@
-ansseq = [1,4,7,10,13,16]
+ansseq = [1, 4, 7, 10, 13, 16]
+
 
 def getnuminseq(idx):
     if idx <= 0:
