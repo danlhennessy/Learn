@@ -8,4 +8,4 @@ def uniqueways(n):
         return n
     return uniqueways(n - 1) + uniqueways(n-2)
         
-print(uniqueways(1))
+print(uniqueways(8))
