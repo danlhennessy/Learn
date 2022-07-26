@@ -1,6 +1,7 @@
 import time
 import multiprocessing
 
+#Threads share global variables. By contrast, separate processes are completely separate; one process cannot affect another's variables
 
 start = time.perf_counter()
 
