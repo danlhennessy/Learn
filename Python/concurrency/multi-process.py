@@ -4,21 +4,24 @@ import multiprocessing
 
 start = time.perf_counter()
 
-def do_something():
-    print('Sleeping 1 sec...')
-    time.sleep(1)
+def do_something(seconds):
+    print(f'Sleeping {seconds} sec...')
+    time.sleep(seconds)
     print('Done Sleeping')
     
 p1 = multiprocessing.Process(target=do_something)
 p2 = multiprocessing.Process(target=do_something)
 
 if __name__ == '__main__':
-    p1.start()
-    p2.start()
-
-    p1.join()
-    p2.join()
-
+    processes = []
+    for v in range(10):
+        p = multiprocessing.Process(target=do_something, args=(1.5,)) #  Args must be able to be serialised using pickle. Tuple is recommended
+        p.start()
+        processes.append(p)
+        
+    for process in processes:
+        process.join()
+        
     finish = time.perf_counter()
 
     print(f'Finished in {round(finish - start, 2)} second(s)')
