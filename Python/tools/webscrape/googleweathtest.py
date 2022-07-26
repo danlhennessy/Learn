@@ -1,25 +1,20 @@
 from requests_html import HTMLSession
 import requests
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup as bs
 import json
 
-s = HTMLSession()
 
-location = "London"
-url = f"https://www.google.com/search?q=weather+{location}"
+url = f"https://www.google.com/search?q=weather+London"
+USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36"
+LANGUAGE = "en-US,en;q=0.5"
 
-r = s.get(url, headers={"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"})
-
-r2 = requests.get(url, headers={"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"})
-soup = BeautifulSoup(r.content, "html.parser")
-
-temp = soup.find('text', 'wob_t wob_gs_l3')
-
-r.html.render(sleep=10)
-
-weather = r.html.find('wob_t.wob_gs_l0', first=True)
-print(weather)
-
-
-svg = r.html.find('svg#wob_gsvg', first=True)
-print(svg.attrs)
+session = requests.Session()
+session.headers['User-Agent'] = USER_AGENT
+session.headers['Accept-Language'] = LANGUAGE
+session.headers['Content-Language'] = LANGUAGE
+html = session.get(url)
+soup = bs(html.text, "html.parser")
+days = soup.find("div", attrs={"id": "wob_dp"})
+for day in days.findAll("div", attrs={"class": "wob_df"}):
+    temp = day.findAll("span", {"class": "wob_t"})
+    print(temp[2].text)
