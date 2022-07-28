@@ -7,7 +7,8 @@ element = mydict["name"]
 print(element)
 
 #Add/Del Key-Value pair
-mydict["email"] = 2 + 1
+mydict["somenum"] = 2 + 1
+mydict["somenum"] += 23
 del mydict["name"]
 print(mydict)
 

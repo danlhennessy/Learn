@@ -15,6 +15,9 @@ for i in numbers3:
     newnumbers3.append(i+30)
 print(newnumbers3)
 
+onelinenumbers3 = [v - 2 for v in numbers3]
+print(onelinenumbers3)
+
 rangelist = [1,4,6,77,81,93]
 
 #Print indexes of the list (0,1,2,3 etc)
