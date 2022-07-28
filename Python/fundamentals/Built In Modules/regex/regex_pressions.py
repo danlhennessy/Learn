@@ -22,7 +22,7 @@ Mrs. Robinson
 Mr. T
 '''
 
-pattern = re.compile(r'abc')
+pattern = re.compile(r'\w')
 matches = pattern.finditer(text_to_search)
 for v in matches:
     print(v) # Prints indexes of result if found in iterable object
