@@ -21,13 +21,17 @@ Ms Davis
 Mrs. Robinson
 Mr. T
 '''
-charset = re.compile(r'[-.]')  #  character set of only . or -
-pattern = re.compile(r'\d\d\d[-.]\d\d\d[-.]\d\d\d\d')
-  # finditer provides an iterable object if there is a match. Otherwise it returns None
+charset = re.compile(r'[-.]')  # character set of only . or -
 
+  
 f = open(r'fundamentals\Built In Modules\regex\data.txt', 'r')
 contents = f.read()
-matches = pattern.finditer(contents)
+pattern = re.compile(r'(\d\d\d)[-.]\d\d\d[-.]\d\d\d\d')  # Match digits and dots/dashes in specific format, e.g: 178-555-4899
+matches = pattern.finditer(contents) # finditer provides an iterable object if there is a match. Otherwise it returns None
+list_ofmatches = pattern.findall(contents)
+firstmatch = pattern.search(contents)
     
 for match in matches:
-    print(match)
+    print(match, match.group(1))  # Group(1) is the first group defined in the compile section for pattern
+    
+print(firstmatch)
