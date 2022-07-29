@@ -1,5 +1,5 @@
 #Open file and make it readable
-employee_file = open("basics/employees.txt", "r")
+employee_file = open("fundamentals\File Operations\employees.txt", "r")
 
 #print(employee_file.read())
 

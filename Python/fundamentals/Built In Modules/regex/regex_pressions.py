@@ -21,8 +21,13 @@ Ms Davis
 Mrs. Robinson
 Mr. T
 '''
+charset = re.compile(r'[-.]')  #  character set of only . or -
+pattern = re.compile(r'\d\d\d[-.]\d\d\d[-.]\d\d\d\d')
+  # finditer provides an iterable object if there is a match. Otherwise it returns None
 
-pattern = re.compile(r'\w')
-matches = pattern.finditer(text_to_search)
-for v in matches:
-    print(v) # Prints indexes of result if found in iterable object
+f = open(r'fundamentals\Built In Modules\regex\data.txt', 'r')
+contents = f.read()
+matches = pattern.finditer(contents)
+    
+for match in matches:
+    print(match)

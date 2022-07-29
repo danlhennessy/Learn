@@ -6,4 +6,4 @@ def getnuminseq(idx):
         return 1
     return (getnuminseq(idx - 1) + 3)
 
-print(getnuminseq(2))
+print(getnuminseq(4))
