@@ -1,4 +1,4 @@
-import itertools # Itertools - Use cases: Combine, slice, flatten and group iterables
+import itertools # Itertools - Use cases: Combine, slice, flatten and group iterables. Find all Combinations/Permutations
 
 counter = itertools.count(start=5, step=-5)
 print(next(counter))
@@ -26,52 +26,8 @@ print(list(perm_results))
 result_with_repeats = itertools.combinations_with_replacement(numbers, 3) # Allow repeat characters
 print(list(result_with_repeats))
 
-people = [
-    {
-        'name': 'John Doe',
-        'city': 'Gotham',
-        'state': 'NY'
-    },
-    {
-        'name': 'Jane Doe',
-        'city': 'Kings Landing',
-        'state': 'NY'
-    },
-    {
-        'name': 'Corey Schafer',
-        'city': 'Boulder',
-        'state': 'CO'
-    },
-    {
-        'name': 'Al Einstein',
-        'city': 'Denver',
-        'state': 'CO'
-    },
-    {
-        'name': 'John Henry',
-        'city': 'Hinton',
-        'state': 'WV'
-    },
-    {
-        'name': 'Randy Moss',
-        'city': 'Rand',
-        'state': 'WV'
-    },
-    {
-        'name': 'Nicole K',
-        'city': 'Asheville',
-        'state': 'NC'
-    },
-    {
-        'name': 'Jim Doe',
-        'city': 'Charlotte',
-        'state': 'NC'
-    },
-    {
-        'name': 'Jane Taylor',
-        'city': 'Faketown',
-        'state': 'NC'
-    }
-]
-
-
+combined = itertools.chain(letters, numbers, names)  # Chain iterables one after another
+with open(r'D:\Backup\Work\DevOps\Python\Scripts\Python\fundamentals\Built In Modules\itertools\test.log', 'r') as f:
+    header = itertools.islice(f, 3)  # Files are iterables and can be sliced. E.g. in this case sliced to the first 3 lines
+    for line in header:  # The result is still an iterable but can be looped
+        print(line, end='')  # end='' prevents an additional empty line
