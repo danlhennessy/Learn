@@ -1,4 +1,4 @@
-import itertools # Itertools - Use cases: Combine, slice, flatten and group iterables. Find all Combinations/Permutations
+import itertools # Itertools - Use cases: Combine, slice, flatten and group Iterables. Find all Combinations/Permutations
 
 counter = itertools.count(start=5, step=-5)
 print(next(counter))
