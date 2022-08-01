@@ -16,7 +16,7 @@ d['a'] = 1
 d['b'] = 2
 print(d['c'])  # If key does not exist, it will return the default value of the data type provided. e.g. for int, default = 0, for float, default = 0.0
 
-deq = deque()  # Double sided queue, can interact with both sides
+deq = deque()  # Double ended queue, can interact with both sides
 deq.append(1)
 deq.appendleft(26)
 deq.extendleft([4,5,77])
