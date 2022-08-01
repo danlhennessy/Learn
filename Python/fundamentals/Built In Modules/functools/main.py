@@ -1,1 +1,1 @@
-# functools
+# functools - module for higher order functions (Functions that take other funcs as arguments OR return funcs as a result)
