@@ -1,19 +1,22 @@
+mynums = [1,11,3,0,15,5,2,4,10,7,12,6]
 
-password = "wbiRerewnurb222iewr"
-def threerepeat(passw):
-    ans = True
-    mydict = {}
-    for v in passw:
-        if v not in mydict:
-            mydict = {}
-            mydict[v] = 1
+
+def largestrange(nums):
+    sortedlist = sorted(nums)
+    last = sortedlist[0]
+    cursub = [last]
+    longestsub = []
+    for i, v in enumerate(sortedlist[1:]):
+        print(f'trying {v}')
+        if v == last + 1:
+            cursub += [v]
+            last = v
+            if len(cursub) > len(longestsub):
+                longestsub = cursub
         else:
-            mydict[v] += 1
-            if mydict[v] == 3:
-                print('3 in a row')
-                ans = False
-    return ans
-
-if any(v.isupper() for v in password) and any(v.islower() for v in password) and any(v.isdigit() for v in password) and len(password) > 6 and len(password) < 21 and threerepeat(password) is not False:
-    print("Yes")
+            cursub = [v]
+        print(cursub)
+            
+    print([longestsub[0], longestsub[-1]])
     
+largestrange(mynums)
