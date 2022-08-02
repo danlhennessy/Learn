@@ -5,4 +5,5 @@ sizes = ['small', 'medium', 'large']
 
 products = [(c, s) for c in colours for s in sizes]
 
-print(products)
+for p in products:
+    print('%s / %s' % p)
