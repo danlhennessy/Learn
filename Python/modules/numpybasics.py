@@ -10,3 +10,5 @@ if 25 in a:
 
 arr = np.arange(36).reshape(3,4,3)  # 3 by 4 by 3 n-dimensional array
 print(arr)
+x = np.random.choice([False, True], size=10000)
+print(np.count_nonzero(x[:-1] < x[1:]))  # Print the number of False - True transitions. count_nonzero() iterates through and tests each objects truthfulness
