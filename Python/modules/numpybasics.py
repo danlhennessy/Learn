@@ -1,4 +1,5 @@
 import numpy as np
+from timeit import timeit
 
 a = np.array([1,22,31,4,5,6])
 print(a)
@@ -10,5 +11,5 @@ if 25 in a:
 
 arr = np.arange(36).reshape(3,4,3)  # 3 by 4 by 3 n-dimensional array
 print(arr)
-x = np.random.choice([False, True], size=10000)
+x = np.random.choice([False, True], size=100000)
 print(np.count_nonzero(x[:-1] < x[1:]))  # Print the number of False - True transitions. count_nonzero() iterates through and tests each objects truthfulness
