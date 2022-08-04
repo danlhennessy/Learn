@@ -7,3 +7,8 @@ print(lastone)
 
 board = [['_'] * 3 for i in range(3)]
 print(board)
+
+mylist = [3,1,6,3,5,5,9,43,2,34,1]
+print(id(mylist))
+mylist = sorted(mylist)
+print(mylist, id(mylist))
