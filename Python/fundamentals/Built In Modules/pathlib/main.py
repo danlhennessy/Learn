@@ -9,4 +9,9 @@ new_p = p / 'Test dir'
 for file_name in new_p.iterdir():
     if file_name.match('*.txt') or file_name.match('*.py'):  # Check for specific file types when iterating through files in path
         print(file_name)
-        
+
+new_p /= 'test.txt'
+print(new_p)
+with new_p.open() as f:
+    print(f.readline())
+    print(f.readline())
