@@ -25,3 +25,4 @@ mydict2 = {"name": "Dan", 1: 3}
 print(mydict2)
 print(mydict2[1])
 print(mydict2["name"])
+print(mydict2.setdefault("hat"))
