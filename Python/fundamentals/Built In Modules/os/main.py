@@ -14,3 +14,4 @@ for dirpath, dirnames, filenames in os.walk('D:/Backup/Work/DevOps/Programming/S
     print('Files: ', filenames)
     print()
     
+os.system("notepad.exe")
