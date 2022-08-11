@@ -23,7 +23,7 @@ num_1 = 20
 num_2 = 10
 
 add_result = add(num_1, num_2)
-logging.debug(f'Add: {num_1} + {num_2} = {add_result}')
+logging.debug(f'Add: {num_1} + {num_2} = {add_result}')  # Used in replacement of a print statement to provide more specific detail
 
 sub_result = subtract(num_1, num_2)
 logging.debug(f'Sub: {num_1} + {num_2} = {sub_result}')
