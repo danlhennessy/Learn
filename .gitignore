@@ -3033,3 +3033,4 @@ Python/games/blackjack/__pycache__/card.cpython-310.pyc
 Python/games/blackjack/__pycache__/deck.cpython-310.pyc
 Python/concurrency/__pycache__/threading.cpython-310.pyc
 Python/concurrency/__pycache__/multiprocessing.cpython-310.pyc
+test.log

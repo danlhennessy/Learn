@@ -28,13 +28,13 @@ num_1 = 20
 num_2 = 10
 
 add_result = add(num_1, num_2)
-logging.debug('Add: {} + {} = {}'.format(num_1, num_2, add_result))
+logging.debug(f'Add: {num_1} + {num_2} = {add_result}')
 
 sub_result = subtract(num_1, num_2)
-logging.debug('Sub: {} - {} = {}'.format(num_1, num_2, sub_result))
+logging.debug(f'Sub: {num_1} + {num_2} = {sub_result}')
 
 mul_result = multiply(num_1, num_2)
-logging.debug('Mul: {} * {} = {}'.format(num_1, num_2, mul_result))
+logging.debug(f'Mul: {num_1} + {num_2} = {mul_result}')
 
 div_result = divide(num_1, num_2)
-logging.debug('Div: {} / {} = {}'.format(num_1, num_2, div_result))
+logging.debug(f'Div: {num_1} + {num_2} = {div_result}')
