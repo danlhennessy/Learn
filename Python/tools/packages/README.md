@@ -10,3 +10,4 @@ Steps:
 - Add classifiers to setup.py file https://pypi.org/classifiers/
 - Add a README.md describing project, how to install, usage
 - Add README to setup.py file as long_description
+- Add library dependencies to setup.py as install_requires, and developer dependencies as extras_require
