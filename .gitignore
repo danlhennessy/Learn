@@ -3034,3 +3034,9 @@ Python/games/blackjack/__pycache__/deck.cpython-310.pyc
 Python/concurrency/__pycache__/threading.cpython-310.pyc
 Python/concurrency/__pycache__/multiprocessing.cpython-310.pyc
 test.log
+Python/tools/packages/test/dist/helloworld-0.0.1-py3-none-any.whl
+Python/tools/packages/test/src/helloworld.egg-info/dependency_links.txt
+Python/tools/packages/test/src/helloworld.egg-info/PKG-INFO
+Python/tools/packages/test/build/lib/helloworld.py
+Python/tools/packages/test/src/helloworld.egg-info/top_level.txt
+Python/tools/packages/test/src/helloworld.egg-info/SOURCES.txt
