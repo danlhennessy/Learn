@@ -3040,3 +3040,4 @@ Python/tools/packages/test/src/helloworld.egg-info/PKG-INFO
 Python/tools/packages/test/build/lib/helloworld.py
 Python/tools/packages/test/src/helloworld.egg-info/top_level.txt
 Python/tools/packages/test/src/helloworld.egg-info/SOURCES.txt
+Python/tools/packages/test/src/__pycache__/helloworld.cpython-310.pyc
