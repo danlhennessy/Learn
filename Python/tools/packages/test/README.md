@@ -16,3 +16,5 @@ Steps:
 - run py setup.py sdist  (For source distribution)
 - Publish package: py setup.py bdist_wheel sdist
 - Push to PyPI: twine upload dist/*
+
+Uploaded: https://pypi.org/project/helloworld-danlh/
