@@ -1,5 +1,8 @@
 from setuptools import setup
 
+with open("README.md", "r") as f:
+    long_description = f.read()
+
 setup(
     name='helloworld',  #  The name used when pip installing (pip install helloworld)
     version='0.0.1',
@@ -11,4 +14,6 @@ setup(
                  "License :: OSI Approved :: MIT License"
                  "Operating System :: OS Independent"
                  ]
+    long_description=long_description,
+    long_description_content_type="text/markdown"
 )
