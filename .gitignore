@@ -3041,3 +3041,14 @@ Python/tools/packages/test/build/lib/helloworld.py
 Python/tools/packages/test/src/helloworld.egg-info/top_level.txt
 Python/tools/packages/test/src/helloworld.egg-info/SOURCES.txt
 Python/tools/packages/test/src/__pycache__/helloworld.cpython-310.pyc
+Python/tools/packages/test/test/__pycache__/test_hello_world.cpython-310-pytest-7.1.2.pyc
+Python/tools/packages/test/dist/helloworld-0.0.1.tar.gz
+Python/tools/packages/test/src/helloworld.egg-info/requires.txt
+Python/tools/packages/test/dist/helloworld_danlh-0.0.1-py3-none-any.whl
+Python/tools/packages/test/dist/helloworld-danlh-0.0.1.tar.gz
+Python/tools/packages/test/src/helloworld_danlh.egg-info/dependency_links.txt
+Python/tools/packages/ex.txt
+Python/tools/packages/test/src/helloworld_danlh.egg-info/requires.txt
+Python/tools/packages/test/src/helloworld_danlh.egg-info/SOURCES.txt
+Python/tools/packages/test/src/helloworld_danlh.egg-info/top_level.txt
+Python/tools/packages/test/src/helloworld_danlh.egg-info/PKG-INFO
