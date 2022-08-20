@@ -6,8 +6,9 @@ class player:  # player attributes, player turn, draw, showhand
     def turn(self, deck):
         while self.curval < 21:
             choice = input("Stick or Twist: ")
-            if choice.lower == "stick":
-                print(f"Your score is {self.curval}")
+            if choice.lower() == "stick":
+                print(f"Your score is {self.curval}! Run file to play again")
+                break
             if choice.lower() == "twist":
                 curcard = deck.drawcard()
                 curcard.showcard()
