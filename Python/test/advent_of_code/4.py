@@ -8,4 +8,21 @@ df = pd.read_excel('D:/Backup/Work/DevOps/Programming/Learn/Python/test/advent_o
 test_arr = df['boards'].to_numpy()
 new_arr = np.array_split(test_arr, 100)
 
+
+
+def top(arr):
+        split = arr[0].split(' ')
+        return list(filter(None, split))
+
+
+def right(arr):
+    pass
+
+def bottom(arr):
+    pass
+
+def left(arr):
+    pass
+
 print(new_arr[0])
+print(top(new_arr[0]))
