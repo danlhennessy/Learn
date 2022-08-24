@@ -33,5 +33,4 @@ def left(arr):
 
 print(new_arr[1])
 
-    
-print(right(new_arr[1]))
+# Bingo happens on any row / column not just sides
