@@ -16,9 +16,11 @@ def horizontal(arr):
         horiz_list.append(list(filter(None, split)))
     return np.array(horiz_list)
 
+
 def vertical(arr):
     return np.transpose(horizontal(arr))
 
 print(new_arr[1])
+print(type(new_arr[1][0]))
 print(horizontal(new_arr[1]))
 print(vertical(new_arr[1]))
