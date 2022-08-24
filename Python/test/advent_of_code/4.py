@@ -9,28 +9,16 @@ test_arr = df['boards'].to_numpy()
 new_arr = np.array_split(test_arr, 100)
 
 
-
-def top(arr):
-    split = arr[0].split(' ')
-    return list(filter(None, split))
-
-
-def right(arr):
-    right_lst = []
+def horizontal(arr):
+    horiz_list = []
     for v in arr:
-        right_lst.append(v[-2:])
-    return [x.strip(' ') for x in right_lst]
+        split = v.split(' ')
+        horiz_list.append(list(filter(None, split)))
+    return np.array(horiz_list)
 
-def bottom(arr):
-    split = arr[4].split(' ')
-    return list(filter(None, split))
-
-def left(arr):
-    left_lst = []
-    for v in arr:
-        left_lst.append(v[:2])
-    return [x.strip(' ') for x in left_lst]
+def vertical(arr):
+    return np.transpose(horizontal(arr))
 
 print(new_arr[1])
-
-# Bingo happens on any row / column not just sides
+print(horizontal(new_arr[1]))
+print(vertical(new_arr[1]))
