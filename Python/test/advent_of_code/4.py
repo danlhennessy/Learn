@@ -11,18 +11,27 @@ new_arr = np.array_split(test_arr, 100)
 
 
 def top(arr):
-        split = arr[0].split(' ')
-        return list(filter(None, split))
+    split = arr[0].split(' ')
+    return list(filter(None, split))
 
 
 def right(arr):
-    pass
+    right_lst = []
+    for v in arr:
+        right_lst.append(v[-2:])
+    return [x.strip(' ') for x in right_lst]
 
 def bottom(arr):
-    pass
+    split = arr[4].split(' ')
+    return list(filter(None, split))
 
 def left(arr):
-    pass
+    left_lst = []
+    for v in arr:
+        left_lst.append(v[:2])
+    return [x.strip(' ') for x in left_lst]
 
-print(new_arr[0])
-print(top(new_arr[0]))
+print(new_arr[1])
+
+    
+print(right(new_arr[1]))
