@@ -41,10 +41,4 @@ print(vertical_all(all_horizontal))
 
 
 def remove_seen(input_list):
-    for num in input_list:
-        rm = np.array([f'{num}'])
-        pass
-        idx = np.in1d(horiz1[0], rm)
-        print(idx)
-        return np.delete(horiz1[0], np.where(idx))
-
+    pass
