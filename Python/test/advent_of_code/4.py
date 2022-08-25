@@ -37,7 +37,7 @@ def vertical_all(multi_arr):
         arguments.append(split)
     return np.concatenate(arguments, axis=0)
 
-print(vertical_all(all_horizontal))
+print(all_horizontal)
 
 
 def remove_seen(input_list):
