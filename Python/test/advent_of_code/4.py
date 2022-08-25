@@ -20,7 +20,31 @@ def horizontal(arr):
 def vertical(arr):
     return np.transpose(horizontal(arr))
 
-print(new_arr[1])
-print(type(new_arr[1][0]))
-print(horizontal(new_arr[1]))
-print(vertical(new_arr[1]))
+
+def horizontal_all(multi_arr):
+    arguments = []
+    for v in multi_arr:
+        arguments.append(horizontal(v))
+    return np.concatenate(arguments, axis=0)
+
+all_horizontal = horizontal_all(new_arr)
+
+def vertical_all(multi_arr):
+    arguments = []
+    temp = np.transpose(multi_arr)
+    for v in temp:
+        split = np.array_split(v, 100)
+        arguments.append(split)
+    return np.concatenate(arguments, axis=0)
+
+print(vertical_all(all_horizontal))
+
+
+def remove_seen(input_list):
+    for num in input_list:
+        rm = np.array([f'{num}'])
+        pass
+        idx = np.in1d(horiz1[0], rm)
+        print(idx)
+        return np.delete(horiz1[0], np.where(idx))
+
