@@ -1,5 +1,5 @@
 fn main() {
-    let mut x = 4;
+    let mut x = 4;  // Default integer type is i32
     println!("x is: {}", x);
 
     {
