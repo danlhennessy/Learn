@@ -3,5 +3,5 @@ fn main() {
     println!("{}", floating_point);
 
     let true_or_false: bool = false;
-    let true_or_false: bool = true;
+    println!("{}", true_or_false);
 }
