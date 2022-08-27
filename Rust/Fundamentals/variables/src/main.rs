@@ -10,7 +10,7 @@ fn main() {
     x = x + 1;
     println!("x is: {}", x);
 
-    const SECONDS_IN_MINUTE: u32 = 60; // u32 is an unsigned 32 bit integer (Min 0, Max 4294967295)
+    const SECONDS_IN_MINUTE: u32 = 60; // u32 is an unsigned 32 bit integer (Min 0, Max (2^32 - 1))
     println!("{}", SECONDS_IN_MINUTE);
 
 }
