@@ -6,4 +6,5 @@ fn main() {
     println!("{}", true_or_false);
 
     let letter: char = 'a'  // Single quotes required
+    println!("{}", letter);
 }
