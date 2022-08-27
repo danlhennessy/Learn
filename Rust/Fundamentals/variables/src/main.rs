@@ -3,7 +3,7 @@ fn main() {
     println!("x is: {}", x);
 
     {
-        let x = 2;
+        let x: i16 = 2;  // Specifying x to have the data type i16
         println!("x is: {}", x);
     }
 
