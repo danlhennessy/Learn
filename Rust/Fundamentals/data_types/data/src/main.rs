@@ -4,4 +4,6 @@ fn main() {
 
     let true_or_false: bool = false;
     println!("{}", true_or_false);
+
+    let letter: char = 'a'  // Single quotes required
 }
