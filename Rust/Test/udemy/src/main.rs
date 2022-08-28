@@ -1,5 +1,8 @@
-
+#[macro_use]
+extern crate fstrings;
 
 fn main() {
-    println!("Hello, {name}!");
+    let name = "Dan";
+
+    println_f!("Hello, {name}!");
 }
