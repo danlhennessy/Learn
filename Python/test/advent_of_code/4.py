@@ -37,8 +37,8 @@ def vertical_all(multi_arr):
         arguments.append(split)
     return np.concatenate(arguments, axis=0)
 
-print(all_horizontal)
-print(vertical_all(all_horizontal))
+#print(all_horizontal)
+#print(vertical_all(all_horizontal))
 
 
 
@@ -46,20 +46,26 @@ print(vertical_all(all_horizontal))
 index = np.argwhere(all_horizontal == "45")
 test = np.delete(all_horizontal, index)
 
-blank_list = []
-for row in all_horizontal:
-    index = np.argwhere(row == "45")
-    test = np.delete(row, index)
-    blank_list.append(test)
-    
-print(blank_list)
+
+tryit = all_horizontal.tolist()
+print(tryit)
+
+for v in tryit:
+    if "45" in v:
+        v.remove("45")
+print(tryit)
 
 def check(numlist):
     for num in numlist:
-        for row in all_horizontal:
-            index = np.argwhere(row == num)
-            test = np.delete(row, index)
-            blank_list.append(test)
+        blank_list = []
+        for block, index in enumerate(all_horizontal):
+            index = np.argwhere(block == num)
+            test = np.delete(block, index)
+            if test.size == 0:
+                print(index)
+                
+            else:
+                blank_list.append(test)
 
 def main(input_list):
     pass
