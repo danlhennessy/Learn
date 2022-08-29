@@ -38,7 +38,11 @@ def vertical_all(multi_arr):
     return np.concatenate(arguments, axis=0)
 
 print(all_horizontal)
+print(vertical_all(all_horizontal))
 
-
-def remove_seen(input_list):
+def check(num):
     pass
+
+def main(input_list):
+    for v in input_list:
+        check(v)
