@@ -37,35 +37,37 @@ def vertical_all(multi_arr):
         arguments.append(split)
     return np.concatenate(arguments, axis=0)
 
-#print(all_horizontal)
-#print(vertical_all(all_horizontal))
+all_vert = vertical_all(all_horizontal)
 
-
-
-
-index = np.argwhere(all_horizontal == "45")
-test = np.delete(all_horizontal, index)
-
-
-tryit = all_horizontal.tolist()
-print(tryit)
-
-for v in tryit:
-    if "45" in v:
-        v.remove("45")
-print(tryit)
+tryit = all_vert.tolist()
+horiz = all_horizontal.tolist()
 
 def check(numlist):
     for num in numlist:
-        blank_list = []
-        for block, index in enumerate(all_horizontal):
-            index = np.argwhere(block == num)
-            test = np.delete(block, index)
-            if test.size == 0:
-                print(index)
-                
-            else:
-                blank_list.append(test)
+        for index, block in enumerate(tryit):
+            if str(num) in block:
+                block.remove(str(num))
+                if block == []:
+                    return(index, num)
 
-def main(input_list):
-    pass
+
+print(check(my_input))  # Prints index of block where bingo is found and the number that triggers bingo
+
+# When checking horizontal blocks, no.347 was the no. with the first bingo, but with vertical blocks, no.46 had the first
+# 45 * 5 = 225 to find start of winning 5x5 grid in horizontal list:
+
+
+
+winning_block = horiz[225:230]
+print(winning_block)
+
+for num in my_input[:35]:
+    for row in winning_block:
+        if str(num) in row:
+            row.remove(str(num))
+res = 0
+for row in winning_block:
+    for item in row:
+        res += int(item)
+print(winning_block)
+print(res * 70)
