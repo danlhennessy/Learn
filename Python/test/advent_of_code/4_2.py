@@ -43,7 +43,7 @@ horiz = all_horizontal.tolist()
 
 tryit = all_horizontal.tolist()
 
-print(tryit[475])
+print(tryit[475:480])
 
 
 def check(numlist):
@@ -58,3 +58,18 @@ def check(numlist):
 final = (check(my_input)) - 1  # Index of final block to get bingo, 475 in my case
 
 print(final)
+
+winning_block = horiz[475:480]
+print(winning_block)
+
+for num in my_input:
+    for row in winning_block:
+        if str(num) in row:
+            row.remove(str(num))
+res = 0
+for row in winning_block:
+    for item in row:
+        res += int(item)
+        print(res)
+print(winning_block)
+print(res * 98)
