@@ -40,9 +40,26 @@ def vertical_all(multi_arr):
 print(all_horizontal)
 print(vertical_all(all_horizontal))
 
-def check(num):
-    pass
+
+
+
+index = np.argwhere(all_horizontal == "45")
+test = np.delete(all_horizontal, index)
+
+blank_list = []
+for row in all_horizontal:
+    index = np.argwhere(row == "45")
+    test = np.delete(row, index)
+    blank_list.append(test)
+    
+print(blank_list)
+
+def check(numlist):
+    for num in numlist:
+        for row in all_horizontal:
+            index = np.argwhere(row == num)
+            test = np.delete(row, index)
+            blank_list.append(test)
 
 def main(input_list):
-    for v in input_list:
-        check(v)
+    pass
