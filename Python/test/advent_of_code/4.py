@@ -41,12 +41,13 @@ all_vert = vertical_all(all_horizontal)
 
 horiz = all_horizontal.tolist()
 
-tryit = all_horizontal.tolist()
+horiz_vert = all_horizontal.tolist() + all_vert.tolist()
+
 
 
 def check(numlist):
     for num in numlist:
-        for index, block in enumerate(tryit):
+        for index, block in enumerate(horiz_vert):
             if str(num) in block:
                 block.remove(str(num))
                 if block == []:
@@ -56,8 +57,7 @@ def check(numlist):
 block_index, trigger_num = check(my_input)
 print(block_index, trigger_num)  # Prints index of block where bingo is found and the number that triggers bingo
 
-# When checking horizontal blocks, no.347 was the no. with the first bingo, with vertical blocks, no.46 had the first but was triggered by a later number
-
+# When checking horizontal blocks, no.347 was the no. with the first bingo, with vertical blocks, the first bingo was triggered by a later number
 
 print(all_horizontal[346])
 winning_block = horiz[345:350]  # Bingo 5x5 grid every 5 rows so 345:350 = winning grid
@@ -71,6 +71,5 @@ res = 0
 for row in winning_block:
     for item in row:
         res += int(item)
-        print(res)
 print(winning_block)
-print(res * trigger_num)
+print(f"Final Score: {res * trigger_num}")
