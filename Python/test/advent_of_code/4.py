@@ -41,9 +41,9 @@ all_vert = vertical_all(all_horizontal)
 
 horiz = all_horizontal.tolist()
 
+vert  = all_vert.tolist()
+
 horiz_vert = all_horizontal.tolist() + all_vert.tolist()
-
-
 
 def check(numlist):
     for num in numlist:
@@ -55,21 +55,40 @@ def check(numlist):
 
 
 block_index, trigger_num = check(my_input)
-print(block_index, trigger_num)  # Prints index of block where bingo is found and the number that triggers bingo
+print(f"block index: {block_index}, trigger number: {trigger_num}")  # Prints index of block where bingo is found and the number that triggers bingo
 
 # When checking horizontal blocks, no.347 was the no. with the first bingo, with vertical blocks, the first bingo was triggered by a later number
 
-print(all_horizontal[346])
-winning_block = horiz[345:350]  # Bingo 5x5 grid every 5 rows so 345:350 = winning grid
-print(winning_block)
 
-for num in my_input[:34]:  # numbers up to the index of the first number to trigger bingo (4)
+if block_index < 500:
+    temp = str(block_index)
+    if int(temp[-1]) > 4 or int(temp[-1]) == 0:
+        lower = int(temp[:-1] + '5')
+        upper = int(lower) + 5
+    else:
+        lower = int(temp[:-1] + '0')
+        upper = int(lower) + 5
+if block_index >= 500:
+    temp = str(block_index)
+    grid_index = temp[-2:]
+    lower = int(grid_index) * 5
+    upper = lower + 5
+
+print(f"First winning bingo grid location - rows: {lower} to {upper}")
+
+
+winning_block = horiz[lower:upper]
+print(f"winning grid: {winning_block}")
+
+trigger_index = my_input.index(trigger_num)
+
+for num in my_input[:trigger_index + 1]:  # numbers up to the index of the first number to trigger bingo (4)
     for row in winning_block:
         if str(num) in row:
             row.remove(str(num))
+
 res = 0
 for row in winning_block:
     for item in row:
         res += int(item)
-print(winning_block)
 print(f"Final Score: {res * trigger_num}")
