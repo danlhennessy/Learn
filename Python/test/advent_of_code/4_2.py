@@ -7,7 +7,7 @@ my_input = [76,69,38,62,33,48,81,2,64,21,80,90,29,99,37,15,93,46,75,0,89,56,58,4
 df = pd.read_excel('D:/Backup/Work/DevOps/Programming/Learn/Python/test/advent_of_code/4.xlsx')
     
 test_arr = df['boards'].to_numpy()
-new_arr = np.array_split(test_arr, 100)
+new_arr = np.array_split(test_arr, 100)  # Separate ndarray into grids of 5x5
 
 first = str(my_input[0])  # Test item for mask
 
