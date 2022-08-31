@@ -9,11 +9,7 @@ df = pd.read_excel('D:/Backup/Work/DevOps/Programming/Learn/Python/test/advent_o
 test_arr = df['boards'].to_numpy()
 new_arr = np.array_split(test_arr, 100)
 
-
-first = str(my_input[0])
-
-
-
+first = str(my_input[0])  # Test item for mask
 
 
 def horizontal(arr):
