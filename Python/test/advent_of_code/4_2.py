@@ -6,8 +6,8 @@ my_input = [76,69,38,62,33,48,81,2,64,21,80,90,29,99,37,15,93,46,75,0,89,56,58,4
     
 df = pd.read_excel('D:/Backup/Work/DevOps/Programming/Learn/Python/test/advent_of_code/4.xlsx')
     
-test_arr = df['boards'].to_numpy()
-new_arr = np.array_split(test_arr, 100)  # Separate ndarray into grids of 5x5
+original_arr = df['boards'].to_numpy()
+grid_arr = np.array_split(original_arr, 100)  # Separate ndarray into grids of 5x5
 
 
 def horizontal(arr):
@@ -18,21 +18,18 @@ def horizontal(arr):
     return np.array(horiz_list)
 
 
-def vertical(arr):
-    return np.transpose(horizontal(arr))
-
-
 def horizontal_all(multi_arr):
     arguments = []
     for v in multi_arr:
         arguments.append(horizontal(v))
     return np.concatenate(arguments, axis=0)
 
-all_horizontal = np.array_split(horizontal_all(new_arr), 100)  # formats elements correctly into strings and reorganises back into 5x5 grid
+all_horizontal = np.array_split(horizontal_all(grid_arr), 100)  # formats elements correctly into strings, removes whitespace and reorganises back into 5x5 grid
 
 def mask_array(ndarray, num):
     return ma.masked_where(ndarray == str(num), ndarray)
-    
+
+
 for num in my_input[:20]:  # Masks elements from original input one by one
     all_horizontal = mask_array(all_horizontal, num)
     
