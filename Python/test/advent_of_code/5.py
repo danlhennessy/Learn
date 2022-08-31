@@ -1,7 +1,5 @@
 from collections import namedtuple
-import matplotlib.pyplot as plt
 import re
-import numpy as np
 
 with open('D:/Backup/Work/DevOps/Programming/Learn/Python/test/advent_of_code/5.txt')  as f:
     my_input = f.readlines()
