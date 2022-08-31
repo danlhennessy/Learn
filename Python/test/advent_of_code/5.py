@@ -6,9 +6,7 @@ with open('D:/Backup/Work/DevOps/Programming/Learn/Python/test/advent_of_code/5.
 
 point = namedtuple('point', ['x', 'y'])
 
-x_list = []
-y_list = []
-points_list = []
+points_list, x_list, y_list = [], [], []
 
 for line in my_input:
     x1, y1, x2, y2 = re.findall(r'\d+', line)
@@ -20,18 +18,19 @@ for line in my_input:
     if x1 == x2 and y1 != y2:
         x_list.append(x1)
         y_list += list(range(min(y1, y2), max(y1, y2)))
-        for v in list(range(min(y1, y2), max(y1, y2))):
+        for v in list(range(min(y1, y2), max(y1, y2) + 1)):
             points_list.append(point(x1, v))
     if x1 != x2 and y1 == y2:
         y_list.append(y1)
         x_list += list(range(min(x1, x2), max(x1, x2)))
-        for v in list(range(min(x1, x2), max(x1, x2))):
+        for v in list(range(min(x1, x2), max(x1, x2) + 1)):
             points_list.append(point(v, y1))
         
 # Ignoring cases where x1 != x2 and y1 != 2 for now
 
+print(list(range(2, 28)))
 
-print(points_list[0])
+print(points_list[-1])
 
 print(len(points_list))
 print(len(set(points_list)))
