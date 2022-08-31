@@ -26,44 +26,24 @@ def horizontal_all(multi_arr):
 
 all_horizontal = np.array_split(horizontal_all(grid_arr), 100)  # formats elements correctly into strings, removes whitespace and reorganises back into 5x5 grid
 
-print(all_horizontal[0])
 
 def mask_array(ndarray, num):
     return ma.masked_where(ndarray == str(num), ndarray)
 
+bingo_list = []
+count = len(bingo_list)
 
-for num in my_input[:44]:  # Masks elements from original input one by one
+for num in my_input:  # Masks elements from original input one by one
     all_horizontal = mask_array(all_horizontal, num)
-    
-# print(ma.MaskedArray(all_horizontal[0]))
-masked_horiz = ma.count_masked(all_horizontal, axis=1)
-masked_vert = ma.count_masked(all_horizontal[0], axis=0)
-
-
-print(all_horizontal)
-
-count = 0
-for i, v in enumerate(all_horizontal):
-    horiz_count = ma.count_masked(v, axis=1)
-    vert_count = ma.count_masked(v, axis=0)
-    if 5 in horiz_count or 5 in vert_count:
-        print(f"Index: {i} has bingo")
-        count += 1
-    else:
-        print(f"Index: {i} has no bingo")
-print(f"# of Bingos: {count}")
-
-# for v in masked_horiz:
-#     if v == 5:
-#         print("Yes horiz bingo here")
-#     else:
-#         print("No horiz bingo")
-        
-# for v in masked_vert:
-#     if v == 5:
-#         print("Yes vert bingo here")
-#     else:
-#         print("No vert bingo")
+    for i, v in enumerate(all_horizontal):
+        horiz_count = ma.count_masked(v, axis=1)
+        vert_count = ma.count_masked(v, axis=0)
+        if 5 in horiz_count or 5 in vert_count:
+            if i not in bingo_list:
+                bingo_list.append(i)
+    if len(bingo_list) == 100:
+        print("last board done")
+    print(num, bingo_list)
 
 
 # print(winning_block)
