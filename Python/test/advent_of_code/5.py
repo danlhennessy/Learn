@@ -1,4 +1,4 @@
-from collections import namedtuple
+from collections import namedtuple, Counter
 import re
 
 with open('D:/Backup/Work/DevOps/Programming/Learn/Python/test/advent_of_code/5.txt')  as f:
@@ -33,5 +33,13 @@ for line in my_input:
 
 print(points_list[0])
 
-if (517, 570) in points_list:
-    print("helloo")
+print(len(points_list))
+print(len(set(points_list)))
+
+print(len(points_list) - len(set(points_list)))
+
+two_or_more = [val for val, i in Counter(points_list).items() if i >= 2]
+
+print(len(two_or_more))
+
+# 4447 too high, 4395 too low
