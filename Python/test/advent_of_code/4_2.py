@@ -35,7 +35,16 @@ all_horizontal = horizontal_all(new_arr)
 masked = ma.masked_where(all_horizontal == first, all_horizontal)
 print(ma.MaskedArray(masked))
 
-print(type(masked))
+
+
+def mask_array(ndarray, num):
+    return ma.masked_where(ndarray == str(num), ndarray)
+    
+for num in my_input:
+    all_horizontal = mask_array(all_horizontal, num)
+    
+print(ma.MaskedArray(all_horizontal))
+    
 
 def vertical_all(multi_arr):
     arguments = []
@@ -51,8 +60,6 @@ horiz = all_horizontal.tolist()
 
 tryit = all_horizontal.tolist()
 
-print(tryit[475:480])
-
 
 def check(numlist):
     for num in numlist:
@@ -65,10 +72,8 @@ def check(numlist):
 
 final = (check(my_input)) - 1  # Index of final block to get bingo, 475 in my case
 
-print(final)
-
 winning_block = horiz[475:480]
-print(winning_block)
+# print(winning_block)
 
 for num in my_input:
     for row in winning_block:
@@ -79,5 +84,5 @@ for row in winning_block:
     for item in row:
         res += int(item)
         print(res)
-print(winning_block)
-print(res * 98)
+# print(winning_block)
+# print(res * 98)
