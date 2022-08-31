@@ -39,9 +39,6 @@ for num in my_input[:20]:  # Masks elements from original input one by one
 print(ma.MaskedArray(all_horizontal))
 
 
-# final = (check(my_input)) - 1  # Index of final block to get bingo, 475 in my case
-
-winning_block = horiz[475:480]
 # print(winning_block)
 
 # for num in my_input:
