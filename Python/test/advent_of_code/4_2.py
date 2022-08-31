@@ -26,14 +26,29 @@ def horizontal_all(multi_arr):
 
 all_horizontal = np.array_split(horizontal_all(grid_arr), 100)  # formats elements correctly into strings, removes whitespace and reorganises back into 5x5 grid
 
+print(all_horizontal[0])
+
 def mask_array(ndarray, num):
     return ma.masked_where(ndarray == str(num), ndarray)
 
 
-for num in my_input[:20]:  # Masks elements from original input one by one
+for num in my_input[:76]:  # Masks elements from original input one by one
     all_horizontal = mask_array(all_horizontal, num)
     
-print(ma.MaskedArray(all_horizontal))
+print(ma.MaskedArray(all_horizontal[0]))
+masked_horiz = ma.count_masked(all_horizontal[0], axis=1)
+masked_vert = ma.count_masked(all_horizontal[0], axis=0)
+for v in masked_horiz:
+    if v == 5:
+        print("Yes horiz bingo here")
+    else:
+        print("No horiz bingo")
+        
+for v in masked_vert:
+    if v == 5:
+        print("Yes vert bingo here")
+    else:
+        print("No vert bingo")
 
 
 # print(winning_block)
