@@ -33,35 +33,11 @@ all_horizontal = np.array_split(horizontal_all(new_arr), 100)  # formats element
 def mask_array(ndarray, num):
     return ma.masked_where(ndarray == str(num), ndarray)
     
-for num in my_input:  # Masks elements from original input one by one
+for num in my_input[:20]:  # Masks elements from original input one by one
     all_horizontal = mask_array(all_horizontal, num)
     
 print(ma.MaskedArray(all_horizontal))
-    
 
-def vertical_all(multi_arr):
-    arguments = []
-    temp = np.transpose(multi_arr)
-    for v in temp:
-        split = np.array_split(v, 100)
-        arguments.append(split)
-    return np.concatenate(arguments, axis=0)
-
-all_vert = vertical_all(all_horizontal)
-
-horiz = all_horizontal.tolist()
-
-tryit = all_horizontal.tolist()
-
-
-def check(numlist):
-    for num in numlist:
-        for index, block in enumerate(tryit):
-            if any(tryit):
-                if str(num) in block:
-                    block.remove(str(num))
-            else:
-                return index
 
 # final = (check(my_input)) - 1  # Index of final block to get bingo, 475 in my case
 
