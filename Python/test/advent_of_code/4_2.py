@@ -31,31 +31,23 @@ def mask_array(ndarray, num):
     return ma.masked_where(ndarray == str(num), ndarray)
 
 bingo_list = []
-count = len(bingo_list)
 
-for num in my_input:  # Masks elements from original input one by one
-    all_horizontal = mask_array(all_horizontal, num)
-    for i, v in enumerate(all_horizontal):
-        horiz_count = ma.count_masked(v, axis=1)
-        vert_count = ma.count_masked(v, axis=0)
-        if 5 in horiz_count or 5 in vert_count:
-            if i not in bingo_list:
-                bingo_list.append(i)
-    if len(bingo_list) == 100:
-        print("last board done")
-    print(num, bingo_list)
+def find_last(numbers_in, all_horizontal):
+    for num in numbers_in:
+        all_horizontal = mask_array(all_horizontal, num)
+        for i, v in enumerate(all_horizontal):
+            horiz_count = ma.count_masked(v, axis=1)
+            vert_count = ma.count_masked(v, axis=0)
+            if 5 in horiz_count or 5 in vert_count:
+                if i not in bingo_list:
+                    bingo_list.append(i)
+        if len(bingo_list) == 100:
+            return (num, all_horizontal[bingo_list[-1]])  # return number that triggered bingo, the bingo board state when it gets bingo with found numbers masked
 
+trigger_num, bingo_board = find_last(my_input, all_horizontal)
 
-# print(winning_block)
+int_board = bingo_board.astype(int)
 
-# for num in my_input:
-#     for row in winning_block:
-#         if str(num) in row:
-#             row.remove(str(num))
-# res = 0
-# for row in winning_block:
-#     for item in row:
-#         res += int(item)
-#         print(res)
-# print(winning_block)
-# print(res * 98)
+print(f"Last completed board: \n{int_board}")
+print(f"\nNumber to trigger bingo: {trigger_num}")
+print(f"Final score: {ma.sum(int_board) * trigger_num}")
