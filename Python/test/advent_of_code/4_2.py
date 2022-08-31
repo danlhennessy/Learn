@@ -9,8 +9,6 @@ df = pd.read_excel('D:/Backup/Work/DevOps/Programming/Learn/Python/test/advent_o
 test_arr = df['boards'].to_numpy()
 new_arr = np.array_split(test_arr, 100)  # Separate ndarray into grids of 5x5
 
-first = str(my_input[0])  # Test item for mask
-
 
 def horizontal(arr):
     horiz_list = []
@@ -30,17 +28,12 @@ def horizontal_all(multi_arr):
         arguments.append(horizontal(v))
     return np.concatenate(arguments, axis=0)
 
-all_horizontal = horizontal_all(new_arr)
-
-masked = ma.masked_where(all_horizontal == first, all_horizontal)
-print(ma.MaskedArray(masked))
-
-
+all_horizontal = np.array_split(horizontal_all(new_arr), 100)  # formats elements correctly into strings and reorganises back into 5x5 grid
 
 def mask_array(ndarray, num):
     return ma.masked_where(ndarray == str(num), ndarray)
     
-for num in my_input:
+for num in my_input:  # Masks elements from original input one by one
     all_horizontal = mask_array(all_horizontal, num)
     
 print(ma.MaskedArray(all_horizontal))
@@ -70,19 +63,19 @@ def check(numlist):
             else:
                 return index
 
-final = (check(my_input)) - 1  # Index of final block to get bingo, 475 in my case
+# final = (check(my_input)) - 1  # Index of final block to get bingo, 475 in my case
 
 winning_block = horiz[475:480]
 # print(winning_block)
 
-for num in my_input:
-    for row in winning_block:
-        if str(num) in row:
-            row.remove(str(num))
-res = 0
-for row in winning_block:
-    for item in row:
-        res += int(item)
-        print(res)
+# for num in my_input:
+#     for row in winning_block:
+#         if str(num) in row:
+#             row.remove(str(num))
+# res = 0
+# for row in winning_block:
+#     for item in row:
+#         res += int(item)
+#         print(res)
 # print(winning_block)
 # print(res * 98)
