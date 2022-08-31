@@ -31,4 +31,4 @@ for line in my_input:
 
 two_or_more = [val for val, i in Counter(points_list).items() if i >= 2]
 
-print(len(two_or_more))
+print(f"# Overlaps of two or more lines: {len(two_or_more)}")
