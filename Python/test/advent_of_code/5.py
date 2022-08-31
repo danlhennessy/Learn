@@ -28,17 +28,7 @@ for line in my_input:
         
 # Ignoring cases where x1 != x2 and y1 != 2 for now
 
-print(list(range(2, 28)))
-
-print(points_list[-1])
-
-print(len(points_list))
-print(len(set(points_list)))
-
-print(len(points_list) - len(set(points_list)))
 
 two_or_more = [val for val, i in Counter(points_list).items() if i >= 2]
 
 print(len(two_or_more))
-
-# 4447 too high, 4395 too low
