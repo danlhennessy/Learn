@@ -1,13 +1,9 @@
-one, two, *rest = [1,2,3,4,5,6,7,8,9,10]
+class my_container():
+    def __init__(self, values):
+        self.values = values
+    def __len__(self):
+        return len(self.values)
+        
+obj = my_container([1,2,3,4,5])
 
-print(two, rest)
-
-some = {1: 2, 2: 'bush', 3: 'car', 4: 'road'}
-others = {1: 4, 2: 'bushes', 3: 'cars', 5: 'roads'}
-
-merged = {**some, **others}
-print(merged)
-
-added = dict(some)
-added.update(others)
-print(added)
+print(len(obj))
