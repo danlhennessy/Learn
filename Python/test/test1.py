@@ -4,6 +4,6 @@ class my_container():
     def __len__(self):
         return len(self.values)
         
-obj = my_container([1,2,3,4,5])
+obj = my_container({1: "one", 2: "two", 3: "tthre"})
 
 print(len(obj))
