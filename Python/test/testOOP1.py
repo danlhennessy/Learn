@@ -11,4 +11,5 @@ class myString(str):
     
 testring = myString("Hellos")
 
-print(testring.pop(1))
+print(testring.pop(3))
+print(testring)
