@@ -1,12 +1,6 @@
-class my_container():
-    def __init__(self, values):
-        self.values = values
-    def __len__(self):
-        return len(self.values)
-    def __getitem__(self, ind):
-        return self.values[ind]
-        
-obj = my_container({1: "one", 2: "two", 3: "tthre"})
+some_data = [1,2,3,"hello", (3, 5), True]
 
-print(len(obj))
-print(obj[3])
+mygen = (value for index, value in enumerate(some_data) if index >= 1)
+
+print(next(mygen))
+print(next(mygen))
