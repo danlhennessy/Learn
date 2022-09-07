@@ -1,8 +1,13 @@
-some_data = [1,2,3,"hello", (3, 5), True]
-
-mygen = (value for index, value in enumerate(some_data) if index >= 1)
-
-print(next(mygen))
 
 
-print(list(mygen))
+if 5:
+    print("This is true")
+    
+if 10:
+    print("This is also true")
+
+five = 5
+ten = 10
+print(five == ten)
+
+print(5.0 == 5)
