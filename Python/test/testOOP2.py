@@ -5,3 +5,11 @@ class point:
     def move(self, x, y):
         self.x = x
         self.y = y
+        
+mypoint = point(2,5)
+
+print(mypoint.x, mypoint.y)
+
+mypoint.move(12,29)
+
+print(mypoint.x, mypoint.y)
