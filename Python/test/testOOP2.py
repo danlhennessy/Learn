@@ -3,8 +3,8 @@ class point:
         self.move(x, y)
         
     def move(self, x, y):
-        self.x = x
-        self.y = y
+        self.x += x
+        self.y += y
         
 mypoint = point(2,5)
 
