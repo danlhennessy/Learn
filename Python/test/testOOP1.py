@@ -11,7 +11,7 @@ class myString(str):
         return self.string[:-p]
 
     def __getitem__(self, index):
-        print(f'getting item at index {index}...')
+        print(f'Getting item at index {index}:')
         try:
             return self.string[index]
         except TypeError:
@@ -21,4 +21,4 @@ testring = myString("Hellos")
 
 print(testring.pop(3))
 print(testring)
-print(testring['g'])
+print(testring[1])
