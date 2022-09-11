@@ -1,17 +1,14 @@
-class point:
-    def __init__(self, x=0, y=0):
-        """Create a point, if no x or y values are provided, they are set to a default 0"""
-        self.move(x, y)
-        
-    def move(self, x, y):
-        """Move the point by provided x and y values"""
-        self.x += x
-        self.y += y
-        
-mypoint = point(2,5)
+class Car:
+    def __init__(self) -> None:
+        pass
+    
+mycar = Car
 
-print(mypoint.x, mypoint.y)
+mycar.make = 'Ferrari'
 
-mypoint.move(12, 29)
+print(mycar.make)
 
-print(mypoint.x, mypoint.y)
+print(mycar.__dict__)
+dirs = dir(mycar)
+
+print(type(dir))
