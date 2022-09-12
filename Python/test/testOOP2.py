@@ -1,4 +1,5 @@
 class Car:
+    avar = 12
     def __init__(self, age=5):
         self.test = 'hello'
         self.age = age
@@ -14,3 +15,5 @@ print(dir(mycar))
 
 # print(mycar.age)
 print(mycar.test)
+
+print(Car.avar)

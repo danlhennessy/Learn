@@ -12,5 +12,6 @@ class shark():
 
 shark1 = shark("Bruce")
 print(shark1.animaltype)  # Calling a Class Variable
+print(shark.animaltype)  # Can also call Class variable directly from class
 print(shark1.name)  # Calling an Instance Variable
 shark1.print_full_name()
