@@ -3080,3 +3080,4 @@ Cargo.lock
 
 # End of https://www.toptal.com/developers/gitignore/api/rust
 Python/test/advent_of_code/4example.py
+Python/test/__pycache__/testOOP2.cpython-310.pyc

@@ -1,3 +1,5 @@
+from testOOP2 import Car
+
 class myString(str):
     def __init__(self, string):
         self.string = string
@@ -22,3 +24,7 @@ testring = myString("Hellos")
 print(testring.pop(3))
 print(testring)
 print(testring[1])
+
+car2 = Car()
+
+print(car2.age)
