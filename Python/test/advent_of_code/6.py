@@ -8,8 +8,9 @@ class lampfish():
     def day(self):
         self.timer -= 1
         if self.timer == -1:
-            all_fish.append(lampfish(8))
+            next_day.append(lampfish(8))
             self.reset()
+        next_day.append(lampfish(self.timer))
         
     def reset(self):
         self.timer = 6
@@ -17,14 +18,18 @@ class lampfish():
         
 all_fish = [lampfish(v) for v in my_input]
 
-print('before:')
-print(all_fish[3].timer)
-print(len(all_fish))
+next_day = []
 
-for i in range(24):
+print('Before:')
+print('Number of lampfish: ', len(all_fish))
+
+n = 80
+
+for i in range(n):
     for fish in all_fish:
         fish.day()
+    all_fish = next_day
+    next_day = []
 
-print('after 4 days:')
-print(all_fish[3].timer)
-print(len(all_fish))
+print(f'After {n} days:')
+print('Number of lampfish: ', len(all_fish))
