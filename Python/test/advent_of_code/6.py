@@ -1,25 +1,29 @@
-import pandas as pd
 my_input = [5,4,3,5,1,1,2,1,2,1,3,2,3,4,5,1,2,4,3,2,5,1,4,2,1,1,2,5,4,4,4,1,5,4,5,2,1,2,5,5,4,1,3,1,4,2,4,2,5,1,3,5,3,2,3,1,1,4,5,2,4,3,1,5,5,1,3,1,3,2,2,4,1,3,4,3,3,4,1,3,4,3,4,5,2,1,1,1,4,5,5,1,1,3,2,4,1,2,2,2,4,1,2,5,5,1,4,5,2,4,2,1,5,4,1,3,4,1,2,3,1,5,1,3,4,5,4,1,4,3,3,3,5,5,1,1,5,1,5,5,1,5,2,1,5,1,2,3,5,5,1,3,3,1,5,3,4,3,4,3,2,5,2,1,2,5,1,1,1,1,5,1,1,4,3,3,5,1,1,1,4,4,1,3,3,5,5,4,3,2,1,2,2,3,4,1,5,4,3,1,1,5,1,4,2,3,2,2,3,4,1,3,4,1,4,3,4,3,1,3,3,1,1,4,1,1,1,4,5,3,1,1,2,5,2,5,1,5,3,3,1,3,5,5,1,5,4,3,1,5,1,1,5,5,1,1,2,5,5,5,1,1,3,2,2,3,4,5,5,2,5,4,2,1,5,1,4,4,5,4,4,1,2,1,1,2,3,5,5,1,3,1,4,2,3,3,1,4,1,1]
 
 
-class fish():
+class lampfish():
     def __init__(self, timer):
         self.timer = timer
     
     def day(self):
         self.timer -= 1
         if self.timer == -1:
-            all_fish.append(fish(8))
+            all_fish.append(lampfish(8))
             self.reset()
         
     def reset(self):
         self.timer = 6
-        
-def one_day(start_fish):
-    return start_fish.day()
-        
-all_fish = [fish(v) for v in my_input]
 
-one_df = all_fish[0].apply(one_day)
+        
+all_fish = [lampfish(v) for v in my_input]
 
-print(one_df)
+print('before:')
+print(all_fish[3].timer)
+print(len(all_fish))
+
+for fish in all_fish:
+    fish.day()
+
+print('after')
+print(all_fish[3].timer)
+print(len(all_fish))
