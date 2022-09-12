@@ -21,9 +21,10 @@ print('before:')
 print(all_fish[3].timer)
 print(len(all_fish))
 
-for fish in all_fish:
-    fish.day()
+for i in range(24):
+    for fish in all_fish:
+        fish.day()
 
-print('after')
+print('after 4 days:')
 print(all_fish[3].timer)
 print(len(all_fish))
