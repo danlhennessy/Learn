@@ -18,18 +18,19 @@ class lampfish():
         
 all_fish = [lampfish(v) for v in my_input]
 
-next_day = []
+
 
 print('Before:')
 print('Number of lampfish: ', len(all_fish))
 
-n = 80
+days = 80
+next_day = []
 
-for i in range(n):
+for i in range(days):
     for fish in all_fish:
         fish.day()
     all_fish = next_day
     next_day = []
 
-print(f'After {n} days:')
+print(f'After {days} days:')
 print('Number of lampfish: ', len(all_fish))
