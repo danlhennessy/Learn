@@ -23,7 +23,7 @@ all_fish = [lampfish(v) for v in my_input]
 print('Before:')
 print('Number of lampfish: ', len(all_fish))
 
-days = 2
+days = 3
 next_day = []
 
 for i in range(days):
