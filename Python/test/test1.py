@@ -1,5 +1,6 @@
 
-
-mylist = [1,5,'hello', 'take', True, (1, 4), 'fish']
-
-print([v for v in mylist if type(v) is not str])
+mylist = [(1,56),2,3,4,5,6]
+for i in mylist:
+    print(i)
+    
+    
