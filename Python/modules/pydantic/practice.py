@@ -17,7 +17,7 @@ def main() -> None:
     with open("Desktop/Programming/Learn/Python/modules/pydantic/example.json") as f:
         data = json.load(f)
         books: List[Book] = [Book(**item) for item in data]
-        print(books)
+        print(books[0].title)
         
         
 if __name__ == "__main__":
