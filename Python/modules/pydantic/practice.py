@@ -1,11 +1,11 @@
 import json
-
+import pydantic
 
 
 def main() -> None:
     with open("Desktop/Programming/Learn/Python/modules/pydantic/example.json") as f:
         data = json.load(f)
-        print(data[0]['glossary']['title'])
+        print(data['glossary']['title'])
         
         
 if __name__ == "__main__":
