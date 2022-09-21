@@ -1,6 +1,6 @@
 
-mylist = [(1,56),2,3,4,5,6]
-for i in mylist:
-    print(i)
-    
-    
+mygen = (v for v in range(25) if v % 2 == 0)
+
+print(next(mygen))
+print(next(mygen))
+print(next(mygen))
