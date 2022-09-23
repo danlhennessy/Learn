@@ -1,9 +1,9 @@
+from dataclasses import dataclass
 
-mygen = (v for v in range(25) if v % 2 == 0)
+@dataclass
+class country:
+    capital: str
+    
+africa = country(capital = "Zimb")
 
-print(next(mygen))
-print(next(mygen))
-print(next(mygen))
-
-for v in mygen:
-    print(v)
+print(africa.capital)
