@@ -4,6 +4,6 @@ from dataclasses import dataclass
 class country:
     capital: str
     
-africa = country(capital = "Zimb")
+Nigeria= country(capital = "Abuja")
 
-print(africa.capital)
+print(Nigeria.capital)
