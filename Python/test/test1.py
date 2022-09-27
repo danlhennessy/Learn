@@ -1,12 +1,2 @@
-from dataclasses import dataclass
-
-@dataclass
-class country:
-    capital: str
-    pop: int = 20_000
-    
-Nigeria= country(capital = "Abuja")
-
-print(Nigeria.capital)
-
-print(Nigeria.pop)
+print(next(v for v in range(12)))
+print(next(v for v in range(12)))
