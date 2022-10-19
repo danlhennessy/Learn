@@ -1,5 +1,7 @@
 
+def myfunc(num):
+    print(num + 12)
 
-mylist = [1,5,'hello', 'take', True, (1, 4), 'fish']
 
-print([v for v in mylist if type(v) is str])
+if __name__ == '__main__':
+    myfunc(2)
