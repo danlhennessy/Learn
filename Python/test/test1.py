@@ -1,7 +1,18 @@
+class test_class:
+    def __init__(self) -> None:
+        pass
+    
+    def finalValueAfterOperations(self, operations: list[str]) -> int:
+        print(23)
+        
+    def other_function(self, num):
+        return(num + 2)
+        
+test_object = test_class()
 
-def myfunc(num):
-    print(num + 12)
+test_object.finalValueAfterOperations(['hello', 'bye'])
 
-mylist = [1,5,'hello', 'take', True, (1, 4), 'fish']
+print(test_object.other_function(5))
 
-print([v for v in mylist if type(v) is str])
+another_num = 28
+
