@@ -1,18 +1,21 @@
-class test_class:
-    def __init__(self) -> None:
-        pass
+class Solution:
+    def __init__(self, api):
+        self.api = api
+        print("Press run code to see this in the console!")
+        # You can initiate and calculate things here
+
+    def level_2_return_a_string(self):
+        """
+        Return a string which is at most 20 characters long and Douglas will
+        say it.
+
+
+        :rtype: string
+        """
+        # Write your code here
+        string = "Helloytrytr"
+        return string
     
-    def finalValueAfterOperations(self, operations: list[str]) -> int:
-        print(23)
-        
-    def other_function(self, num):
-        return(num + 2)
-        
-test_object = test_class()
+tester = Solution(' any')
 
-test_object.finalValueAfterOperations(['hello', 'bye'])
-
-print(test_object.other_function(5))
-
-another_num = 28
-
+print(tester.level_2_return_a_string())
