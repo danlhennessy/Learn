@@ -3083,3 +3083,5 @@ Python/test/advent_of_code/4example.py
 Python/test/__pycache__/testOOP2.cpython-310.pyc
 .DS_Store
 .vscode/launch.json
+Python/test/__pycache__/calc.cpython-310.pyc
+Python/test/__pycache__/test_calc.cpython-310.pyc
