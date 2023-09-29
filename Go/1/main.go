@@ -2,11 +2,10 @@ package main
 
 import "fmt"
 
-var c, python, java bool
-
-var d string = `why`
-
 func main() {
-	var i int
-	fmt.Println(i, c, python, java, d)
+	for j := 7; j <= 25; j++ {
+		k := j
+		j += 1
+		fmt.Println(k, j)
+	}
 }
