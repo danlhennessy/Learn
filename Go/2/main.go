@@ -12,5 +12,7 @@ func main() {
 		fmt.Println(k, j)
 	}
 	var myargs []string = os.Args
-	fmt.Println(myargs)
+	for _, argument := range myargs {
+		fmt.Println("This is an arg:", argument)
+	}
 }
