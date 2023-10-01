@@ -14,5 +14,8 @@ func main() {
 	fmt.Println(pole)
 	fmt.Println(point)
 	fmt.Println(*point)
+	*point = 21
+	fmt.Println(pole)
+	fmt.Println(*point)
 
 }
