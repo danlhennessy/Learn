@@ -8,7 +8,11 @@ func main() {
 	fmt.Printf("val: %v\n", pole)
 	fmt.Printf("type: %T\n", pole)
 
-	var point *int
-	point = &pole
+	point := &pole
 	fmt.Println(point)
+	pole += 2
+	fmt.Println(pole)
+	fmt.Println(point)
+	fmt.Println(*point)
+
 }
