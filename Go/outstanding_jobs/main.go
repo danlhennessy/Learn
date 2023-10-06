@@ -36,7 +36,8 @@ func main() {
 
 	for {
 		var count int
-		qerr := db.QueryRow(`SELECT COUNT(*) FROM customers WHERE last_name LIKE '%Doe%'`).Scan(&count)
+		lastname := `Doe`
+		qerr := db.QueryRow(`SELECT COUNT(*) FROM customers WHERE last_name LIKE '%' || $1 || '%'`, lastname).Scan(&count)
 		if qerr != nil {
 			panic(qerr)
 		}
@@ -45,7 +46,7 @@ func main() {
 		}
 		fmt.Println(`Rows count:`, count)
 
-		time.Sleep(10 * time.Second)
+		time.Sleep(2 * time.Second)
 	}
 
 }
