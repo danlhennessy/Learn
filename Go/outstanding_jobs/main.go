@@ -18,10 +18,14 @@ func main() {
 		log.Fatal("Error loading .env file")
 	}
 
+	environment := os.Getenv("ENVIRONMENT")
+	if environment == "" {
+		log.Fatal("ENVIRONMENT environment variable is not set.")
+	}
+
 	password := os.Getenv("DB_PASSWORD")
 	if password == "" {
-		fmt.Println("DB_PASSWORD environment variable is not set.")
-		return
+		log.Fatal("DB_PASSWORD environment variable is not set.")
 	}
 	encodedPassword := url.QueryEscape(password)
 
@@ -33,6 +37,10 @@ func main() {
 		panic(err)
 	}
 	defer db.Close()
+
+	if environment == "development" {
+		return
+	}
 
 	for {
 		var count int
